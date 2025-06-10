@@ -1,0 +1,130 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Gilroy';
+  color: #ffffff;
+  overflow: hidden;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  background-color: black;
+}
+
+#nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 30px;
+  height: 70px;
+  background-color: black;
+}
+
+/* Navbar Styles */
+#nav {
+  display: flex;
+  align-items: center;
+  height: 50px;
+}
+
+#nav h3 {
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+
+/* Navigation Links */
+#nav2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  font-size: 15px;
+}
+
+#nav2 a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #ffffff;
+  padding-bottom: 3px;
+}
+.social-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index:10;
+  pointer-events: auto;
+}
+
+.social-icons a {
+  padding: 5px;
+  border-radius: 50%;
+  text-align: center;
+  transition: background 0.3s;
+  text-decoration: none;
+}
+
+.social-icons a:hover {
+  background-color: #2dfab6;
+}
+
+.social-icons i {
+  font-size: 12px;
+}
+
+#nav2 a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #00ffaa;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease-in-out;
+}
+
+/* on hover, scaleX to full width from center */
+#nav2 a:hover::after {
+  transform: scaleX(1);
+}
+
+/* active link color */
+#nav2 a.active {
+  color: #00ffaa;
+}
+@media (max-width: 768px) {
+  #nav-container {
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    height: auto;
+    gap: 10px;
+    padding-top: 10px;
+  }
+
+  #nav h3 {
+    font-size: 28px;
+  }
+
+  #nav2 {
+    gap: 20px;
+    font-size: 14px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .social-icons {
+    bottom: 150px;
+    left: 15px;
+    gap: 10px;
+  }
+}
+
